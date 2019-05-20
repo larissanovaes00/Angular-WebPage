@@ -1,0 +1,18 @@
+<div class="container container-usuarios">
+  <div class="jumbotron">
+      
+    <div class="usuario" *ngFor="let user of usuarios">
+      <div><img class="foto-usuario" src="{{user.image}}" alt=""></div>
+        <div class="usuario-table" >
+            <input class="form-control" id="disabledInput" type="text" placeholder="{{user.id}}" disabled><br>
+            <input class="form-control" id="disabledInput" type="text" placeholder="{{user.nome}}" disabled><br>
+            <input class="form-control" id="disabledInput" type="text" placeholder="{{user.email}}" disabled><br>
+            <div>
+              <button type="edit" class="btn btn-primary" id="btn-editar" [routerLink]="['/edit/user', user.id]"> Editar</button>
+              <button class="btn btn-danger" id="btn-excluir" (click)="deleteUser(user.id)">Excluir</button>
+            </div>
+      </div>
+    </div>            
+  </div>
+
+</div>
